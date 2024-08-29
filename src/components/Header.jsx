@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from "../assets/headerlogo.png";
 import {
   RiArrowRightUpLine,
   RiCloseLine,
@@ -23,7 +24,7 @@ const ResponsiveNavbar = () => {
   return (
     <header className="header" id="header">
       <nav className="nav container">
-        <img className="nav__logo" src="/src/assets/heroimg1.png" alt="Logo" />
+        <img className="nav__logo" src={logo} alt="Logo" />
 
         <div
           className={`nav__menu ${menuVisible ? "show-menu" : ""}`}
