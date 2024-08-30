@@ -1,5 +1,5 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 /*=============== BASE ===============*/
 * {
@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 0.938rem;
   background-color: hsl(0, 0%, 100%);
 }
@@ -51,14 +51,14 @@ a {
 }
 
 .nav__logo {
-  color: #000;
+  color: #072f62;
   font-weight: 500;
 }
 
 .nav__close,
 .nav__toggle {
   display: flex;
-  color: #000;
+  color: #072f62;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -69,7 +69,7 @@ a {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   position: relative;
   overflow: hidden;
   background-position: center;
@@ -99,7 +99,121 @@ a {
     background-image: url("/src/assets/heroimg6.png");
   }
 }
+.hero-content {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+  /* align-items: center; */
+}
 
+.hero-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place image behind the content */
+}
+
+.hero-data {
+  /* border-left: 15px solid rgba(246, 156, 156, 90%); */
+  flex: 0 1 40%;
+  background-color: rgba(1, 28, 62, 0.8);
+  padding: 40px 20px;
+  color: white;
+  gap: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  z-index: 1;
+  align-items: center;
+}
+
+.hero-heading {
+  display: flex;
+}
+
+.hero-heading h1 {
+  font-size: 4rem;
+  display: flex;
+  margin: 0;
+}
+
+.hero-heading sup {
+  font-size: 1rem;
+  margin-left: 5px; /* Adjust spacing between SKYLAR and TM */
+  color: #ec3223;
+  vertical-align: top;
+}
+
+.hero-data h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.button {
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #fff;
+  color: #072f62;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s;
+}
+
+.button__icon-wrapper {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  color: var(--clr);
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: #072f62;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.button:hover .button__icon-wrapper {
+  color: #072f62;
+}
+
+.button__icon-svg--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.button:hover .button__icon-svg:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.button:hover .button__icon-svg--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
 /* Navigation for mobile devices */
 @media screen and (max-width: 1150px) {
   .nav__menu {
@@ -154,16 +268,16 @@ a {
 
 .nav__link {
   position: relative;
-  color: #000;
+  color: #072f62;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
   display: inline-flex;
   align-items: center;
   transition: opacity 0.4s;
 }
 
 .nav__link i {
-  font-size: 2rem;
+  font-size: 5rem;
   position: absolute;
   opacity: 0;
   visibility: hidden;
@@ -182,7 +296,7 @@ a {
   bottom: -6px;
   width: 0;
   height: 2px;
-  background-color: #000;
+  background-color: #072f62;
   transition: width 0.4s ease-out;
 }
 
@@ -215,7 +329,7 @@ a {
 }
 
 .nav__social-link {
-  color: #000;
+  color: #072f62;
   font-size: 1.5rem;
   transition: transform 0.4s;
 }
@@ -258,7 +372,7 @@ a {
   }
 
   .nav__link {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .nav__link i {
