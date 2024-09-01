@@ -123,7 +123,6 @@ a {
   justify-content: flex-end;
   position: relative;
   overflow: hidden;
-  /* align-items: center; */
 }
 
 .hero-image {
@@ -142,7 +141,7 @@ a {
   /* border-left: 15px solid rgba(246, 156, 156, 90%); */
   flex: 0 1 40%;
   background-color: rgba(1, 28, 62, 0.8);
-  padding: 40px 20px;
+  padding: 5px;
   color: white;
   gap: 2.5rem;
   display: flex;

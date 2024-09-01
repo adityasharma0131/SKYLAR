@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../assets/headerlogo.png";
 import {
   RiArrowRightUpLine,
@@ -12,17 +12,45 @@ import {
 
 const ResponsiveNavbar = () => {
   const [menuVisible, setMenuVisible] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
+  // Toggle menu visibility
   const handleToggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
 
+  // Close the menu
   const handleCloseMenu = () => {
     setMenuVisible(false);
   };
 
+  // Handle link click to close the menu
+  const handleLinkClick = () => {
+    handleCloseMenu();
+  };
+
+  // Scroll handler to show/hide header
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      // Scrolling down
+      setShowHeader(false);
+    } else {
+      // Scrolling up
+      setShowHeader(true);
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <header className="header" id="header">
+    <header className={`header ${showHeader ? "show" : "hide"}`} id="header">
       <nav className="nav container">
         <img className="nav__logo" src={logo} alt="Logo" />
 
@@ -32,35 +60,35 @@ const ResponsiveNavbar = () => {
         >
           <ul className="nav__list">
             <li className="nav__item">
-              <a href="#home" className="nav__link">
+              <a href="#home" className="nav__link" onClick={handleLinkClick}>
                 <RiArrowRightUpLine />
                 <span>Home</span>
               </a>
             </li>
 
             <li className="nav__item">
-              <a href="#about" className="nav__link">
+              <a href="#about" className="nav__link" onClick={handleLinkClick}>
                 <RiArrowRightUpLine />
                 <span>About Us</span>
               </a>
             </li>
 
             <li className="nav__item">
-              <a href="#" className="nav__link">
+              <a href="#projects" className="nav__link" onClick={handleLinkClick}>
                 <RiArrowRightUpLine />
                 <span>Projects</span>
               </a>
             </li>
 
             <li className="nav__item">
-              <a href="#" className="nav__link">
+              <a href="#studio" className="nav__link" onClick={handleLinkClick}>
                 <RiArrowRightUpLine />
                 <span>Studio</span>
               </a>
             </li>
 
             <li className="nav__item">
-              <a href="#" className="nav__link">
+              <a href="#contact" className="nav__link" onClick={handleLinkClick}>
                 <RiArrowRightUpLine />
                 <span>Contact</span>
               </a>
