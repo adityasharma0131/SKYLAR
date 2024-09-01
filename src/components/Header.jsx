@@ -32,14 +32,14 @@ const ResponsiveNavbar = () => {
         >
           <ul className="nav__list">
             <li className="nav__item">
-              <a href="#" className="nav__link">
+              <a href="#home" className="nav__link">
                 <RiArrowRightUpLine />
                 <span>Home</span>
               </a>
             </li>
 
             <li className="nav__item">
-              <a href="#" className="nav__link">
+              <a href="#about" className="nav__link">
                 <RiArrowRightUpLine />
                 <span>About Us</span>
               </a>
