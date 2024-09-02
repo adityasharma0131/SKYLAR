@@ -114,6 +114,40 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <div className="contact-section" id="contact">
+        <div className="contact-container">
+          <h2 className="heading1">Reach out to us</h2>
+          <p className="contact-subheading">
+            Shoot us a message if you have any question, we're here to help!
+          </p>
+          <form className="contact-form">
+            <div className="form-group">
+              <input
+                type="text"
+                className="contact-input"
+                placeholder="Enter your name"
+                required
+              />
+              <input
+                type="email"
+                className="contact-input"
+                placeholder="Enter your Email"
+                required
+              />
+            </div>
+            <textarea
+              className="contact-textarea"
+              placeholder="Write your message"
+              rows="4"
+              required
+            ></textarea>
+            <button type="submit" className="contact-button">
+              Send Now
+            </button>
+          </form>
+        </div>
+      </div>
     </>
   );
 };
