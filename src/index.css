@@ -623,12 +623,10 @@ hr {
   flex: 1;
   display: flex;
   justify-content: center;
-  margin: 10px 20px;
 }
 
 .footer-map iframe {
   border: 0;
-  border-radius: 10px;
 }
 
 .footer-bottom {
