@@ -1,4 +1,6 @@
 import React from "react";
+import product1 from "../assets/product1.png";
+import product2 from "../assets/product2.png";
 
 const Home = () => {
   return (
@@ -77,6 +79,21 @@ const Home = () => {
                 relationships based on trust, aiming to set the highest
                 standards in construction while achieving long-term excellence.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="our-products" id="products">
+        <div className="bgbox">
+          <h2 className="heading1">Our Products</h2>
+          <hr />
+          <div className="product-box">
+            <div className="product-bgbox">
+              <img src={product1} alt="Product 1" />
+            </div>
+            <div className="product-bgbox">
+              <img src={product2} alt="Product 2" />
             </div>
           </div>
         </div>
