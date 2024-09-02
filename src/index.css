@@ -12,6 +12,11 @@ html {
   scroll-behavior: smooth;
 }
 
+::placeholder {
+  font-family: "Cormorant Garamond", serif;
+  color: #072f62;
+}
+
 body {
   font-family: "Cormorant Garamond", serif;
   font-size: 0.938rem;
