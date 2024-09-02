@@ -85,15 +85,31 @@ const Home = () => {
       </div>
 
       <div className="our-products" id="products">
-        <div className="bgbox">
+        <div className="prbox">
           <h2 className="heading1">Our Products</h2>
           <hr />
           <div className="product-box">
             <div className="product-bgbox">
               <img src={product1} alt="Product 1" />
+              <h1>Product Name</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <button>Show More</button>
             </div>
             <div className="product-bgbox">
               <img src={product2} alt="Product 2" />
+              <h1>Product Name</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <button>Show More</button>
             </div>
           </div>
         </div>

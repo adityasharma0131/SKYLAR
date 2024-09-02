@@ -74,9 +74,13 @@ const ResponsiveNavbar = () => {
             </li>
 
             <li className="nav__item">
-              <a href="#projects" className="nav__link" onClick={handleLinkClick}>
+              <a
+                href="#products"
+                className="nav__link"
+                onClick={handleLinkClick}
+              >
                 <RiArrowRightUpLine />
-                <span>Projects</span>
+                <span>Products</span>
               </a>
             </li>
 
@@ -88,7 +92,11 @@ const ResponsiveNavbar = () => {
             </li>
 
             <li className="nav__item">
-              <a href="#contact" className="nav__link" onClick={handleLinkClick}>
+              <a
+                href="#contact"
+                className="nav__link"
+                onClick={handleLinkClick}
+              >
                 <RiArrowRightUpLine />
                 <span>Contact</span>
               </a>

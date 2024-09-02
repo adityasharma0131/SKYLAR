@@ -251,10 +251,9 @@ a {
   position: relative;
   overflow: hidden;
 }
-
 .bgbox {
   position: relative;
-  padding: 1rem 2rem; /* Adjusted padding for better spacing */
+  padding: 1rem 2rem;
   margin: 2rem 1rem;
   border-radius: 10px;
   text-align: center;
@@ -262,21 +261,25 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.product-box {
-  position: relative;
-  padding: 1rem 2rem;
-  margin: 2rem 1rem;
-  border-radius: 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: center;
+  width: 100%;
 }
 
+.prbox {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.product-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
 .heading1 {
   font-size: 2rem;
   font-weight: 800;
@@ -344,13 +347,12 @@ hr {
 .our-products {
   min-height: 100vh;
   background-size: cover;
-  background-image: url("/src/assets/our\ products.png");
+  background-image: url("/src/assets/our products.png");
   background-position: center;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
-  align-content: center;
   justify-content: center;
   padding: 20px;
   text-align: center;
@@ -364,44 +366,82 @@ hr {
   background-color: #fff;
 }
 
-.product-box {
-  position: relative;
-  padding: 1rem 2rem;
-  margin: 2rem 1rem;
-  border-radius: 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: center;
-}
-
 .product-bgbox {
+  flex: 1 1 300px; /* Ensures all boxes have a base size but can grow */
+  max-width: 300px; /* Max width for all boxes */
+  height: 400px; /* Consistent height for all boxes */
   position: relative;
-  padding: 1rem; /* Adjusted padding for better spacing */
-  margin: 2rem 1rem;
+  padding: 1rem;
+  margin: 1rem;
   text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* Distributes content evenly */
   background-color: rgba(70, 0, 0, 0.4);
   overflow: hidden;
+  border-radius: 5px;
   background-size: cover;
   background-position: center;
 }
+
 .product-bgbox img {
-  max-height: 100vh;
-  max-width: auto;
+  max-height: 150px;
+  max-width: 100%;
+  object-fit: cover; /* Ensures images cover the box without distortion */
+  border-radius: 5px; /* Slight radius to match overall style */
+  transition: transform 0.3s ease; /* Smooth transition for the image */
 }
+
+.product-bgbox:hover img {
+  transform: scale(1.1); /* Scale up the image on hover */
+}
+
+.product-bgbox h1 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0.5rem 0;
+}
+
+.product-bgbox p {
+  font-size: 0.9rem;
+  color: #ddd;
+  line-height: 1.4;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+.product-bgbox button {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: #072f62;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-bgbox button:hover {
+  background-color: #072f62;
+  color: #fff;
+}
+
 /* Responsive adjustments */
 
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
     align-items: center;
+  }
+  .product-box {
+    flex-wrap: wrap;
+  }
+  .product-bgbox {
+    flex: 1 1 45%; /* Adjusts to roughly half width on tablets */
   }
 
   .about-left,
@@ -435,9 +475,15 @@ hr {
   .heading1 {
     font-size: 1.5rem;
   }
+  .product-bgbox {
+    flex: 1 1 100%; /* Full width on smaller screens */
+  }
 
   .heading2 {
     font-size: 1rem;
+  }
+  .product-box {
+    flex-wrap: wrap;
   }
 
   .heading3 {
