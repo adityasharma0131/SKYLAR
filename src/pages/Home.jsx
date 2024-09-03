@@ -8,7 +8,7 @@ const Home = () => {
 
   // Fetch products from the JSON file
   useEffect(() => {
-    fetch("products.json") // Adjust path if necessary
+    fetch("/public/products.json") // Adjust path if necessary
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));
