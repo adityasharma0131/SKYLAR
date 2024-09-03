@@ -1,8 +1,45 @@
-import React from "react";
-import product1 from "../assets/product1.png";
-import product2 from "../assets/product2.png";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const [products, setProducts] = useState([]);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const navigate = useNavigate();
+
+  // Fetch products from the JSON file
+  useEffect(() => {
+    fetch("/src/products.json") // Adjust path if necessary
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+      .catch((error) => console.error("Error fetching products:", error));
+  }, []);
+
+  // Handle scroll to show/hide the "Scroll to Top" button
+  const handleScroll = () => {
+    if (window.scrollY > 300) {
+      setShowScrollTop(true);
+    } else {
+      setShowScrollTop(false);
+    }
+  };
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Navigate to the Singpro page with product details
+  const handleShowMore = (id) => {
+    navigate(`/product/${id}`);
+  };
+
   return (
     <>
       <div className="homepage" id="home">
@@ -89,28 +126,16 @@ const Home = () => {
           <h2 className="heading1">Our Products</h2>
           <hr />
           <div className="product-box">
-            <div className="product-bgbox">
-              <img src={product1} alt="Product 1" />
-              <h1>Product Name</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <button>Show More</button>
-            </div>
-            <div className="product-bgbox">
-              <img src={product2} alt="Product 2" />
-              <h1>Product Name</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <button>Show More</button>
-            </div>
+            {products.map((product) => (
+              <div className="product-bgbox" key={product.id}>
+                <img src={product.image} alt={product.name} />
+                <h1 className="heading1">{product.name}</h1>
+                <p>{product.description}</p>
+                <button onClick={() => handleShowMore(product.id)}>
+                  Show More
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -148,6 +173,26 @@ const Home = () => {
           </form>
         </div>
       </div>
+
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button className="scroll-to-top" onClick={scrollToTop}>
+          ↑
+        </button>
+      )}
+
+      {/* WhatsApp Icon */}
+      <a
+        href="https://wa.me/your-phone-number" // Replace with your WhatsApp number
+        className="whatsapp-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+          alt="WhatsApp"
+        />
+      </a>
     </>
   );
 };
