@@ -11,11 +11,13 @@ const Singpro = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch("/products.json"); // Adjust path if necessary
+        const response = await fetch("/products.json");
+        console.log("Fetching products from:", response.url); // Log the fetch URL
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
+        console.log("Fetched data:", data); // Log fetched data
         const foundProduct = data.find((item) => item.id === parseInt(id));
         if (foundProduct) {
           setProduct(foundProduct);
@@ -23,6 +25,7 @@ const Singpro = () => {
           setError("Product not found");
         }
       } catch (error) {
+        console.error("Error fetching product data:", error); // Log any errors
         setError(error.message || "Error fetching product data");
       } finally {
         setLoading(false);
