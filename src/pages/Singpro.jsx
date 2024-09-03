@@ -11,7 +11,7 @@ const Singpro = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch("/src/products.json"); // Adjust path if necessary
+        const response = await fetch("/public/products.json"); // Adjust path if necessary
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
