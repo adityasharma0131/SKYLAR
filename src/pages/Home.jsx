@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop"; // Adjust the path as needed
+import WhatsAppButton from "../components/WhatsaapButton"; // Adjust the path as needed
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -119,7 +121,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       <div className="our-products" id="products">
         <div className="prbox">
           <h2 className="heading1">Our Products</h2>
@@ -138,7 +139,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       <div className="contact-section" id="contact">
         <div className="contact-container">
           <h2 className="heading1">Reach out to us</h2>
@@ -172,26 +172,9 @@ const Home = () => {
           </form>
         </div>
       </div>
-
-      {/* Scroll to Top Button */}
-      {showScrollTop && (
-        <button className="scroll-to-top" onClick={scrollToTop}>
-          ↑
-        </button>
-      )}
-
-      {/* WhatsApp Icon */}
-      <a
-        href="https://wa.me/your-phone-number" // Replace with your WhatsApp number
-        className="whatsapp-button"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-          alt="WhatsApp"
-        />
-      </a>
+      <ScrollToTop />
+      <WhatsAppButton phoneNumber="your-phone-number" />{" "}
+      {/* Replace with your actual WhatsApp number */}
     </>
   );
 };

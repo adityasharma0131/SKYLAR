@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop"; // Adjust the path as needed
+import WhatsAppButton from "../components/WhatsaapButton"; // Adjust the path as needed
 
 const Singpro = () => {
   const { id } = useParams(); // Get the product ID from the URL
@@ -47,20 +49,25 @@ const Singpro = () => {
 
   // Render the product details
   return (
-    <div className="singpro">
-      <div className="single-bgbox">
-        <img
-          className="singpro__image"
-          src={product.image}
-          alt={product.name}
-        />
-        <div className="single-content">
-          <h1 className="singpro__title">{product.name}</h1>
-          <p className="singpro__description">{product.description}</p>
-          {/* Add more product details as needed */}
+    <>
+      <div className="singpro">
+        <div className="single-bgbox">
+          <img
+            className="singpro__image"
+            src={product.image}
+            alt={product.name}
+          />
+          <div className="single-content">
+            <h1 className="singpro__title">{product.name}</h1>
+            <p className="singpro__description">{product.description}</p>
+            {/* Add more product details as needed */}
+          </div>
         </div>
       </div>
-    </div>
+      <ScrollToTop />
+      <WhatsAppButton phoneNumber="your-phone-number" />{" "}
+      {/* Replace with your actual WhatsApp number */}
+    </>
   );
 };
 

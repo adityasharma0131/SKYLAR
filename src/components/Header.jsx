@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { HashLink as Link } from "react-router-hash-link";
 import logo from "../assets/headerlogo.png";
 import {
   RiArrowRightUpLine,
@@ -23,11 +24,6 @@ const ResponsiveNavbar = () => {
   // Close the menu
   const handleCloseMenu = () => {
     setMenuVisible(false);
-  };
-
-  // Handle link click to close the menu
-  const handleLinkClick = () => {
-    handleCloseMenu();
   };
 
   // Scroll handler to show/hide header
@@ -60,39 +56,51 @@ const ResponsiveNavbar = () => {
         >
           <ul className="nav__list">
             <li className="nav__item">
-              <a href="#home" className="nav__link" onClick={handleLinkClick}>
+              <Link
+                smooth
+                to="/#home"
+                className="nav__link"
+                onClick={handleCloseMenu}
+              >
                 <RiArrowRightUpLine />
                 <span>Home</span>
-              </a>
+              </Link>
             </li>
 
             <li className="nav__item">
-              <a href="#about" className="nav__link" onClick={handleLinkClick}>
+              <Link
+                smooth
+                to="/#about"
+                className="nav__link"
+                onClick={handleCloseMenu}
+              >
                 <RiArrowRightUpLine />
                 <span>About Us</span>
-              </a>
+              </Link>
             </li>
 
             <li className="nav__item">
-              <a
-                href="#products"
+              <Link
+                smooth
+                to="/#products"
                 className="nav__link"
-                onClick={handleLinkClick}
+                onClick={handleCloseMenu}
               >
                 <RiArrowRightUpLine />
                 <span>Products</span>
-              </a>
+              </Link>
             </li>
 
             <li className="nav__item">
-              <a
-                href="#contact"
+              <Link
+                smooth
+                to="/#contact"
                 className="nav__link"
-                onClick={handleLinkClick}
+                onClick={handleCloseMenu}
               >
                 <RiArrowRightUpLine />
                 <span>Contact</span>
-              </a>
+              </Link>
             </li>
           </ul>
 
