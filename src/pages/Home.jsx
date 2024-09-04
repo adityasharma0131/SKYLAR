@@ -166,9 +166,11 @@ const Home = () => {
               rows="4"
               required
             ></textarea>
-            <button type="submit" className="contact-button">
-              Send Now
-            </button>
+            <div>
+              <button type="submit" className="contact-button">
+                Send Now
+              </button>
+            </div>
           </form>
         </div>
       </div>

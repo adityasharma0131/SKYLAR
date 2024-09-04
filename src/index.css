@@ -514,6 +514,7 @@ hr {
   color: #fff; /* White text */
   border: none;
   border-radius: 4px;
+  width: 30%;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
@@ -741,8 +742,7 @@ hr {
   font-weight: 700;
   line-height: 1.6;
   color: #072f62;
-  margin-left: .6rem;
-
+  margin-left: 0.6rem;
 }
 
 /* Feature list styling */
@@ -752,7 +752,7 @@ hr {
   margin: 10px 0;
   color: #072f62;
   font-weight: 700;
-  margin-left: .6rem;
+  margin-left: 0.6rem;
 }
 
 /* Loading and error states */
