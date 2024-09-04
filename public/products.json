@@ -1,30 +1,84 @@
 [
   {
     "id": 1,
-    "name": "Product 1",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "name": "Skylark Block Jointer",
+    "description": "Skylark Block Jointer is a versatile high-quality mortar mix specifically designed to provide strength and adhesion to walls constructed with AAC blocks, fly ash bricks, concrete blocks, etc. It combines cement, graded sand, and blended polymers to impart high strength and water retention properties.",
     "image": "/product1.png",
     "features": [
-      "High durability",
-      "Compact design",
-      "Energy efficient",
-      "User-friendly interface"
+      "Ready to use; only water needs to be added.",
+      "No shrinkage cracks.",
+      "High bond strength.",
+      "No curing required.",
+      "Excellent workability compared to conventional mortar.",
+      "Cost-effective with no wastage.",
+      "Premixed, saving time and labor.",
+      "Consistent product quality.",
+      "Easy to store, with no need for loose, unprocessed raw materials for masonry."
     ],
-    "mixing": "Mixing instructions: Combine all components thoroughly until uniform consistency is achieved. Adjust ratios according to the specific requirements of the application.",
-    "application": "Mixing instructions: Ensure all materials are clean before mixing. Stir thoroughly to avoid clumps and achieve a homogeneous blend suitable for immediate use.",
-    "precaution": "Mixing instructions: Ensure all materials are clean before mixing. Stir thoroughly to avoid clumps and achieve a homogeneous blend suitable for immediate use."
+    "mixing": "Skylark Block Jointer should be mixed with clear potable water. Use about 10 to 12 liters of water for one 40kg bag. Add the powder to the water and mix until a uniform, lump-free consistency is achieved.",
+    "application": "The mix should be spread on the surface to a uniform thickness of 3-4mm. It is advised to moisten the blocks before laying.",
+    "precaution": "Skylark Block Jointer contains non-toxic materials, but care should be taken to avoid dust inhalation. In case of contact with eyes, rinse immediately with plenty of clean water and seek medical advice.",
+    "properties": {
+      "appearance": "Free Flowing Powder",
+      "color": "Grey",
+      "water_demand": "25-30%",
+      "workability": "Very Good",
+      "self_curing": "No Curing Required",
+      "pot_life": "> 60 minutes"
+    }
   },
   {
     "id": 2,
-    "name": "Product 2",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "name": "Skylark AAC Blocks",
+    "description": "Skylark AAC Blocks are lightweight, precast masonry materials manufactured using fly ash, cement, water, lime, and aluminum powder. AAC blocks are known for their high strength, durability, and excellent thermal and acoustic insulation properties.",
     "image": "/product2.png",
     "features": [
-      "High durability",
-      "Compact design",
-      "Energy efficient",
-      "User-friendly interface"
+      "High strength and durability.",
+      "Excellent thermal and acoustic insulation.",
+      "Fire resistant and pest resistant.",
+      "High resistance to water penetration.",
+      "Earthquake resistant and energy efficient.",
+      "Lightweight, reducing dead load on buildings."
     ],
-    "mixing": "Mixing instructions: Ensure all materials are clean before mixing. Stir thoroughly to avoid clumps and achieve a homogeneous blend suitable for immediate use."
+    "aac_block_size_chart": [
+      {
+        "size": "3\" or 75 mm",
+        "dimensions": "600 x 200 x 075 mm",
+        "pieces_per_cbm": 111.11
+      },
+      {
+        "size": "4\" or 100 mm",
+        "dimensions": "600 x 200 x 100 mm",
+        "pieces_per_cbm": 83.33
+      },
+      {
+        "size": "5\" or 125 mm",
+        "dimensions": "600 x 200 x 125 mm",
+        "pieces_per_cbm": 66.66
+      },
+      {
+        "size": "6\" or 150 mm",
+        "dimensions": "600 x 200 x 150 mm",
+        "pieces_per_cbm": 55.55
+      },
+      {
+        "size": "8\" or 200 mm",
+        "dimensions": "600 x 200 x 200 mm",
+        "pieces_per_cbm": 41.66
+      },
+      {
+        "size": "9\" or 225 mm",
+        "dimensions": "600 x 200 x 225 mm",
+        "pieces_per_cbm": 37.04
+      }
+    ],
+    "durability": "Does not contain any organic matter, will not degrade even under severe weather conditions.",
+    "pest_resistance": "Termites and ants do not eat or nest in AAC Block due to its inorganic composition.",
+    "strength": "Cured under high pressure steam curing (autoclaving) process, exhibiting high strength performance.",
+    "water_penetration_resistance": "Cellular structure resists water penetration effectively.",
+    "fire_resistance": "Remarkable fire resistance, made of non-combustible materials, with low thermal conductivity.",
+    "acoustic_insulation": "Meets standards for sound insulation, providing quieter interiors.",
+    "earthquake_resistance": "Reduces dead load on buildings, proven to withstand category 5 tropical storms.",
+    "thermal_insulation": "Helps maintain internal temperature, enhancing energy efficiency."
   }
 ]

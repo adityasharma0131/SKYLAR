@@ -9,6 +9,13 @@ const Singpro = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Helper function to capitalize the first letter of each word
+  const capitalizeHeader = (header) => {
+    return header
+      .replace(/_/g, " ")
+      .replace(/\b\w/g, (char) => char.toUpperCase());
+  };
+
   // Fetch product data by ID
   useEffect(() => {
     const fetchProduct = async () => {
@@ -47,6 +54,99 @@ const Singpro = () => {
     return <div className="singpro__error">{error}</div>;
   }
 
+  // Render dynamically based on product keys
+  const renderProductDetails = () => {
+    return Object.entries(product).map(([key, value]) => {
+      if (key === "id" || key === "name" || key === "image") return null; // Skip certain keys
+
+      // Handle rendering of known complex structures like features and tables
+      if (key === "features" && Array.isArray(value)) {
+        return (
+          <div key={key}>
+            <h2 className="sing-heading2">
+              {capitalizeHeader("Features And Benefits")}
+            </h2>
+            <ul className="feature-list">
+              {value.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+          </div>
+        );
+      }
+
+      if (key === "aac_block_size_chart" && Array.isArray(value)) {
+        return (
+          <div key={key}>
+            <h2 className="sing-heading2">
+              {capitalizeHeader("AAC Block Size Chart")}
+            </h2>
+            <table
+              className="aac-block-size-chart"
+              style={{
+                borderCollapse: "collapse",
+                width: "100%",
+                border: "1px solid #072f62",
+              }}
+            >
+              <thead>
+                <tr style={{ backgroundColor: "#d12222", color: "#fff" }}>
+                  <th style={{ border: "1px solid #072f62", padding: "8px" }}>
+                    Size
+                  </th>
+                  <th style={{ border: "1px solid #072f62", padding: "8px" }}>
+                    Dimensions
+                  </th>
+                  <th style={{ border: "1px solid #072f62", padding: "8px" }}>
+                    Pieces per CBM
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {value.map((block, index) => (
+                  <tr key={index}>
+                    <td style={{ border: "1px solid #072f62", padding: "8px" }}>
+                      {block.size}
+                    </td>
+                    <td style={{ border: "1px solid #072f62", padding: "8px" }}>
+                      {block.dimensions}
+                    </td>
+                    <td style={{ border: "1px solid #072f62", padding: "8px" }}>
+                      {block.pieces_per_cbm}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if (typeof value === "object" && !Array.isArray(value)) {
+        return (
+          <div key={key}>
+            <h2 className="sing-heading2">{capitalizeHeader(key)}</h2>
+            <ul className="property-list">
+              {Object.entries(value).map(([subKey, subValue]) => (
+                <li key={subKey}>
+                  <strong>{capitalizeHeader(subKey)}:</strong> {subValue}
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      }
+
+      // Default rendering for other string or simple keys
+      return (
+        <div key={key}>
+          <h2 className="sing-heading2">{capitalizeHeader(key)}</h2>
+          <p className="singpro__description">{value}</p>
+        </div>
+      );
+    });
+  };
+
   // Render the product details
   return (
     <>
@@ -59,36 +159,7 @@ const Singpro = () => {
           />
           <div className="single-content">
             <h1 className="heading3">{product?.name || "Product Name"}</h1>
-            <p className="singpro__description">
-              {product?.description || "Product description is not available."}
-            </p>
-            {/* Add more product details as needed */}
-            <div className="pointer-content">
-              <h2 className="heading2">Features And Benefits</h2>
-              <ul className="feature-list">
-                {product?.features && product.features.length > 0 ? (
-                  product.features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))
-                ) : (
-                  <li>No features available</li>
-                )}
-              </ul>
-              <h2 className="heading2">Mixing</h2>
-              <p className="singpro__description">
-                {product?.mixing || "Mixing information is not available."}
-              </p>
-
-              <h2 className="heading2">Application</h2>
-              <p className="singpro__description">
-                {product?.application || "Mixing information is not available."}
-              </p>
-
-              <h2 className="heading2">Precautions</h2>
-              <p className="singpro__description">
-                {product?.precaution || "Mixing information is not available."}
-              </p>
-            </div>
+            {renderProductDetails()}
           </div>
         </div>
       </div>
