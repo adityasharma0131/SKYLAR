@@ -23,7 +23,7 @@ body {
   background-color: hsl(0, 0%, 100%);
 }
 *::selection {
-  background: #ec3223;
+  background: #dc3545;
   color: #072f62;
 }
 
@@ -693,7 +693,7 @@ hr {
 .single-bgbox {
   position: relative;
   padding: 0.5rem;
-  margin-top: 50px;
+  margin-top: 67px;
   border-radius: 10px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -729,9 +729,7 @@ hr {
   transform: scale(1.05);
 }
 
-/* Title styling */
-.singpro__title {
-  font-size: 24px;
+.single-content .heading3 {
   font-weight: bold;
   margin-bottom: 10px;
   color: #072f62;
@@ -740,8 +738,21 @@ hr {
 /* Description styling */
 .singpro__description {
   font-size: 16px;
+  font-weight: 700;
   line-height: 1.6;
   color: #072f62;
+  margin-left: .6rem;
+
+}
+
+/* Feature list styling */
+.feature-list {
+  list-style-type: disc; /* Adds bullet points */
+  padding-left: 20px; /* Adds space before the list items */
+  margin: 10px 0;
+  color: #072f62;
+  font-weight: 700;
+  margin-left: .6rem;
 }
 
 /* Loading and error states */
@@ -759,6 +770,14 @@ hr {
 
 .singpro__error {
   color: #dc3545;
+}
+
+.pointer-content .heading2 {
+  background-color: #072f62;
+  color: #dc3545;
+  padding: 1px 1px 1px 12px;
+  text-align: left;
+  border-right: 5px solid #dc3545;
 }
 
 /* Responsive adjustments */
@@ -781,15 +800,16 @@ hr {
 
 @media (max-width: 600px) {
   .single-content {
-    text-align: center;
+    text-align: left;
     align-items: center;
   }
 
   .singpro__title,
   .singpro__description {
-    text-align: center;
+    text-align: left;
   }
 }
+
 /* Responsive adjustments */
 
 @media (max-width: 768px) {

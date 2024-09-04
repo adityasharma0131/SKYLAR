@@ -54,13 +54,41 @@ const Singpro = () => {
         <div className="single-bgbox">
           <img
             className="singpro__image"
-            src={product.image}
-            alt={product.name}
+            src={product?.image || "/placeholder-image.jpg"} // Add default image
+            alt={product?.name || "Product Image"}
           />
           <div className="single-content">
-            <h1 className="singpro__title">{product.name}</h1>
-            <p className="singpro__description">{product.description}</p>
+            <h1 className="heading3">{product?.name || "Product Name"}</h1>
+            <p className="singpro__description">
+              {product?.description || "Product description is not available."}
+            </p>
             {/* Add more product details as needed */}
+            <div className="pointer-content">
+              <h2 className="heading2">Features And Benefits</h2>
+              <ul className="feature-list">
+                {product?.features && product.features.length > 0 ? (
+                  product.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))
+                ) : (
+                  <li>No features available</li>
+                )}
+              </ul>
+              <h2 className="heading2">Mixing</h2>
+              <p className="singpro__description">
+                {product?.mixing || "Mixing information is not available."}
+              </p>
+
+              <h2 className="heading2">Application</h2>
+              <p className="singpro__description">
+                {product?.application || "Mixing information is not available."}
+              </p>
+
+              <h2 className="heading2">Precautions</h2>
+              <p className="singpro__description">
+                {product?.precaution || "Mixing information is not available."}
+              </p>
+            </div>
           </div>
         </div>
       </div>

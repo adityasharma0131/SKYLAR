@@ -3,12 +3,28 @@
     "id": 1,
     "name": "Product 1",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "/product1.png" 
+    "image": "/product1.png",
+    "features": [
+      "High durability",
+      "Compact design",
+      "Energy efficient",
+      "User-friendly interface"
+    ],
+    "mixing": "Mixing instructions: Combine all components thoroughly until uniform consistency is achieved. Adjust ratios according to the specific requirements of the application.",
+    "application": "Mixing instructions: Ensure all materials are clean before mixing. Stir thoroughly to avoid clumps and achieve a homogeneous blend suitable for immediate use.",
+    "precaution": "Mixing instructions: Ensure all materials are clean before mixing. Stir thoroughly to avoid clumps and achieve a homogeneous blend suitable for immediate use."
   },
   {
     "id": 2,
     "name": "Product 2",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "/product2.png" 
+    "image": "/product2.png",
+    "features": [
+      "High durability",
+      "Compact design",
+      "Energy efficient",
+      "User-friendly interface"
+    ],
+    "mixing": "Mixing instructions: Ensure all materials are clean before mixing. Stir thoroughly to avoid clumps and achieve a homogeneous blend suitable for immediate use."
   }
 ]
