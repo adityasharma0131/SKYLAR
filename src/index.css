@@ -542,6 +542,11 @@ hr {
   align-content: center;
 }
 
+.footer-logo p {
+  color: #072f62;
+  font-weight: 700;
+}
+
 .footer-logo {
   display: flex;
   flex-direction: column;
@@ -559,6 +564,9 @@ hr {
 .footer-contact {
   flex: 1;
   margin: 10px 20px;
+
+  color: #072f62;
+  font-weight: 700;
 }
 
 .footer-links h3,
@@ -572,16 +580,23 @@ hr {
 .footer-contact ul {
   list-style: none;
   padding: 0;
+  color: #072f62;
+  font-weight: 700;
 }
 
 .footer-links ul li,
 .footer-contact ul li {
   margin-bottom: 10px;
+
+  color: #072f62;
+  font-weight: 700;
 }
 
 .footer-links ul li a,
 .footer-contact ul li a {
-  color: #333;
+  color: #072f62;
+  font-weight: 700;
+
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -703,7 +718,7 @@ hr {
 /* Background box for product content */
 .single-bgbox {
   position: relative;
-  padding: 1rem;
+
   margin-top: 67px;
 
   border-radius: 10px;
@@ -713,9 +728,6 @@ hr {
   flex-direction: row;
   align-items: flex-start;
   flex-wrap: nowrap;
-
-
-  
 }
 
 /* color: #072f62;
@@ -773,7 +785,6 @@ align-items: center; */
 /* Grid item styling */
 .grid-item {
   background: #fff;
-  padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -792,13 +803,14 @@ align-items: center; */
 }
 
 /* Feature list styling */
-.feature-list {
+.feature-list,
+.property-list,
+.singpro__description {
   list-style-type: disc; /* Adds bullet points */
   padding-left: 20px; /* Adds space before the list items */
   margin: 10px 0;
   color: #072f62;
   font-weight: 700;
-  margin-left: 0.6rem;
 }
 
 /* Loading and error states */
