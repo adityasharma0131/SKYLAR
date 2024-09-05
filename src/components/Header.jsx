@@ -109,7 +109,7 @@ const ResponsiveNavbar = () => {
             <RiCloseLine />
           </div>
 
-          <div className="nav__social">
+          {/* <div className="nav__social">
             <a
               href="https://www.instagram.com/"
               target="_blank"
@@ -145,7 +145,7 @@ const ResponsiveNavbar = () => {
             >
               <RiLinkedinBoxLine />
             </a>
-          </div>
+          </div> */}
         </div>
 
         {/* Toggle button */}

@@ -62,7 +62,7 @@ const Singpro = () => {
       // Handle rendering of known complex structures like features and tables
       if (key === "features" && Array.isArray(value)) {
         return (
-          <div key={key}>
+          <div key={key} className="grid-item">
             <h2 className="sing-heading2">
               {capitalizeHeader("Features And Benefits")}
             </h2>
@@ -77,43 +77,24 @@ const Singpro = () => {
 
       if (key === "aac_block_size_chart" && Array.isArray(value)) {
         return (
-          <div key={key}>
+          <div key={key} className="grid-item">
             <h2 className="sing-heading2">
               {capitalizeHeader("AAC Block Size Chart")}
             </h2>
-            <table
-              className="aac-block-size-chart"
-              style={{
-                borderCollapse: "collapse",
-                width: "100%",
-                border: "1px solid #072f62",
-              }}
-            >
+            <table className="aac-block-size-chart">
               <thead>
-                <tr style={{ backgroundColor: "#d12222", color: "#fff" }}>
-                  <th style={{ border: "1px solid #072f62", padding: "8px" }}>
-                    Size
-                  </th>
-                  <th style={{ border: "1px solid #072f62", padding: "8px" }}>
-                    Dimensions
-                  </th>
-                  <th style={{ border: "1px solid #072f62", padding: "8px" }}>
-                    Pieces per CBM
-                  </th>
+                <tr>
+                  <th>Size</th>
+                  <th>Dimensions</th>
+                  <th>Pieces per CBM</th>
                 </tr>
               </thead>
               <tbody>
                 {value.map((block, index) => (
                   <tr key={index}>
-                    <td style={{ border: "1px solid #072f62", padding: "8px" }}>
-                      {block.size}
-                    </td>
-                    <td style={{ border: "1px solid #072f62", padding: "8px" }}>
-                      {block.dimensions}
-                    </td>
-                    <td style={{ border: "1px solid #072f62", padding: "8px" }}>
-                      {block.pieces_per_cbm}
-                    </td>
+                    <td>{block.size}</td>
+                    <td>{block.dimensions}</td>
+                    <td>{block.pieces_per_cbm}</td>
                   </tr>
                 ))}
               </tbody>
@@ -124,7 +105,7 @@ const Singpro = () => {
 
       if (typeof value === "object" && !Array.isArray(value)) {
         return (
-          <div key={key}>
+          <div key={key} className="grid-item">
             <h2 className="sing-heading2">{capitalizeHeader(key)}</h2>
             <ul className="property-list">
               {Object.entries(value).map(([subKey, subValue]) => (
@@ -139,7 +120,7 @@ const Singpro = () => {
 
       // Default rendering for other string or simple keys
       return (
-        <div key={key}>
+        <div key={key} className="grid-item">
           <h2 className="sing-heading2">{capitalizeHeader(key)}</h2>
           <p className="singpro__description">{value}</p>
         </div>
@@ -159,13 +140,12 @@ const Singpro = () => {
           />
           <div className="single-content">
             <h1 className="heading3">{product?.name || "Product Name"}</h1>
-            {renderProductDetails()}
+            <div className="product-grid">{renderProductDetails()}</div>
           </div>
         </div>
       </div>
       <ScrollToTop />
-      <WhatsAppButton phoneNumber="your-phone-number" />{" "}
-      {/* Replace with your actual WhatsApp number */}
+      <WhatsAppButton phoneNumber="your-phone-number" /> {/* Replace with your actual WhatsApp number */}
     </>
   );
 };
