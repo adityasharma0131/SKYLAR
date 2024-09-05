@@ -654,6 +654,26 @@ hr {
   align-items: center;
   height: 50vh;
   max-width: 100%;
+  flex-wrap: wrap;
+  padding: 20px; /* Add some padding for better spacing */
+}
+
+/* Adjustments for medium screens (tablets) */
+@media (max-width: 1024px) {
+  .footer-map {
+    height: 40vh; /* Adjust the height for tablets */
+    padding: 15px; /* Adjust padding */
+  }
+}
+
+/* Adjustments for small screens (mobile devices) */
+@media (max-width: 768px) {
+  .footer-map {
+    background-attachment: scroll; /* Fixed backgrounds can cause performance issues on mobile */
+    height: auto; /* Allow height to adjust automatically */
+    padding: 10px; /* Further reduce padding */
+    text-align: center; /* Center text on smaller screens */
+  }
 }
 
 .footer-map iframe {

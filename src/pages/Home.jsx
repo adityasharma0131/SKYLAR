@@ -224,6 +224,14 @@ const Home = () => {
           allowFullScreen
           loading="lazy"
         ></iframe>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36497.424179615715!2d72.83539273898808!3d19.41975464136283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7a88eb71a351b%3A0xfced7b21b607e0c6!2sJio-bp!5e1!3m2!1sen!2sin!4v1725562396327!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+        ></iframe>
       </div>
       <ScrollToTop />
       <WhatsAppButton phoneNumber="9969929292" />{" "}
