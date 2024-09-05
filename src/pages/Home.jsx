@@ -42,6 +42,31 @@ const Home = () => {
     navigate(`/product/${id}`);
   };
 
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "ba521758-99c9-4b4b-bbfd-15b09b531ad7");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <>
       <div className="homepage" id="home">
@@ -148,16 +173,24 @@ const Home = () => {
           <p className="contact-subheading">
             Shoot us a message if you have any question, we're here to help!
           </p>
-          <form className="contact-form">
+          <form onSubmit={onSubmit} className="contact-form">
             <div className="form-group">
               <input
+                type="hidden"
+                name="access_key"
+                value="ba521758-99c9-4b4b-bbfd-15b09b531ad7"
+              />
+
+              <input
                 type="text"
+                name="name"
                 className="contact-input"
                 placeholder="Enter your name"
                 required
               />
               <input
                 type="email"
+                name="email"
                 className="contact-input"
                 placeholder="Enter your Email"
                 required
@@ -165,6 +198,7 @@ const Home = () => {
             </div>
             <textarea
               className="contact-textarea"
+              name="message"
               placeholder="Write your message"
               rows="4"
               required
