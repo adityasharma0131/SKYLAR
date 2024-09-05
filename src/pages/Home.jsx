@@ -49,7 +49,7 @@ const Home = () => {
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "ba521758-99c9-4b4b-bbfd-15b09b531ad7");
+    formData.append("access_key", "63a127c8-ae35-4314-a1f4-04b85b2ea884");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -136,14 +136,18 @@ const Home = () => {
                 WHERE INNOVATION MEETS SUSTAINABILITY.
               </h2>
               <p className="para">
-                Real Homes Developers, with 15 years of experience, excels in
-                delivering high-quality residential, commercial, and industrial
-                projects. Our unwavering commitment to precision, efficiency,
-                and client satisfaction drives us to utilize cutting-edge
-                techniques for seamless project execution from start to finish.
-                Dedicated to exceeding expectations, we build enduring
-                relationships based on trust, aiming to set the highest
-                standards in construction while achieving long-term excellence.
+                SKYLARK is a renowned supplier of AAC Blocks and Block Jointer
+                products, dedicated to delivering high-quality construction
+                materials for a variety of masonry applications. With a strong
+                commitment to excellence, SKYLARK offers precisely manufactured
+                AAC (Autoclaved Aerated Concrete) Blocks that meet the rigorous
+                standards of IS 2185 PART III, ensuring reliability and superior
+                performance in construction projects. Our AAC Blocks are known
+                for their lightweight yet strong composition, making them an
+                ideal choice for building energy-efficient and durable
+                structures. These blocks provide excellent thermal insulation,
+                soundproofing, and fire resistance, making them suitable for
+                residential, commercial, and industrial constructions.
               </p>
             </div>
           </div>
@@ -178,7 +182,7 @@ const Home = () => {
               <input
                 type="hidden"
                 name="access_key"
-                value="ba521758-99c9-4b4b-bbfd-15b09b531ad7"
+                value="63a127c8-ae35-4314-a1f4-04b85b2ea884"
               />
 
               <input
@@ -213,7 +217,7 @@ const Home = () => {
       </div>
       <div className="footer-map">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.804820733738!2d72.95467599999999!3d19.2037254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9f5c38d909d%3A0xbd382394b6bff4f7!2sOmega%20Business%20Park!5e0!3m2!1sen!2sin!4v1724338422171!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195.5592465869509!2d72.87121311156604!3d19.260268136642573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0f27194fa11%3A0xd52f0613215a6c03!2sMetasky!5e1!3m2!1sen!2sin!4v1725545129996!5m2!1sen!2sin"
           width="100%"
           height="100%"
           style={{ border: 0 }}
