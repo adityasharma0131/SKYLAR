@@ -145,7 +145,7 @@ const Singpro = () => {
         </div>
       </div>
       <ScrollToTop />
-      <WhatsAppButton phoneNumber="your-phone-number" /> {/* Replace with your actual WhatsApp number */}
+      <WhatsAppButton phoneNumber="9969929292" /> {/* Replace with your actual WhatsApp number */}
     </>
   );
 };

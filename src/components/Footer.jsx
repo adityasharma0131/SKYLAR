@@ -69,10 +69,10 @@ const Footer = () => {
             <h3>Contact</h3>
             <ul>
               <li>
-                <FaPhone /> +91 9723923722
+                <FaPhone /> +91 9969929292
               </li>
               <li>
-                <FaEnvelope /> example@gmail.com
+                <FaEnvelope /> skylarkgroup92@gmail.com
               </li>
               <li>
                 <MdLocationOn /> <a href="#">Google Location</a>
@@ -86,7 +86,7 @@ const Footer = () => {
 
       {/* Footer Bottom Section */}
       <div className="footer-bottom">
-        <p>Skylark © 2024 All Rights Reserved | Design and Developed by XYZ</p>
+        <p>Skylark © 2024 All Rights Reserved</p>
       </div>
     </>
   );

@@ -355,6 +355,16 @@ hr {
   text-align: left; /* Align text to the left for desktop */
 }
 
+.about-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
 .our-products {
   min-height: 100vh;
   background-size: cover;
@@ -389,7 +399,7 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: space-between; /* Distributes content evenly */
-  background-color: rgba(70, 0, 0, 0.4);
+  background-color: rgba(7, 47, 98, 0.4);
   overflow: hidden;
   border-radius: 5px;
   background-size: cover;
@@ -718,12 +728,8 @@ hr {
 /* Background box for product content */
 .single-bgbox {
   position: relative;
-
   margin-top: 67px;
-
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -784,7 +790,6 @@ align-items: center; */
 
 /* Grid item styling */
 .grid-item {
-  background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }

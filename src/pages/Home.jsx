@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ScrollToTop from "../components/ScrollToTop"; // Adjust the path as needed
 import WhatsAppButton from "../components/WhatsaapButton"; // Adjust the path as needed
+import aboutpic from "../assets/aboutpic.png";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -102,6 +103,8 @@ const Home = () => {
                 SKYLARK<sup>TM</sup>
               </h1>
               <h3 className="heading2">ACC BLOCK AND BLOCK JOINTER</h3>
+
+              <img className="about-image" src={aboutpic} alt="" />
             </div>
             <div className="about-right">
               <h2 className="heading3">
@@ -185,7 +188,7 @@ const Home = () => {
         ></iframe>
       </div>
       <ScrollToTop />
-      <WhatsAppButton phoneNumber="your-phone-number" />{" "}
+      <WhatsAppButton phoneNumber="9969929292" />{" "}
       {/* Replace with your actual WhatsApp number */}
     </>
   );
