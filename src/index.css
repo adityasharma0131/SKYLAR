@@ -1,5 +1,5 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Nanum+Myeongjo&display=swap");
 
 /*=============== BASE ===============*/
 * {
@@ -13,12 +13,12 @@ html {
 }
 
 ::placeholder {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Cormorant Infant", serif;
   color: #072f62;
 }
 
 body {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Cormorant Infant", serif;
   font-size: 0.938rem;
   background-color: hsl(0, 0%, 100%);
 }
@@ -157,12 +157,16 @@ a {
   align-items: center;
 }
 
+.heading {
+  color: #fff;
+}
+
 .hero-heading {
   display: flex;
 }
 
 .hero-heading h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   display: flex;
   margin: 0;
 }
@@ -286,10 +290,14 @@ a {
 }
 
 .product-box {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Default: 3 columns for large screens */
+  gap: 1rem; /* Adds space between rows and columns */
+  justify-content: center; /* Centers the grid horizontally */
 }
 .heading1 {
   font-size: 2rem;
@@ -315,7 +323,7 @@ a {
   margin: 0.5rem 0;
 }
 .heading4 sup {
-  font-size: 2.5rem;
+  font-size: 1rem;
   vertical-align: top;
 }
 
@@ -386,14 +394,10 @@ hr {
 .our-products hr {
   background-color: #fff;
 }
-
 .product-bgbox {
-  flex: 1 1 300px; /* Ensures all boxes have a base size but can grow */
-  max-width: 300px; /* Max width for all boxes */
-  height: 400px; /* Consistent height for all boxes */
-  position: relative;
+  max-width: 300px; /* Ensures each box doesn't exceed 300px width */
+  height: 400px; /* Fixed height for all cards */
   padding: 1rem;
-  margin: 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -404,6 +408,29 @@ hr {
   border-radius: 5px;
   background-size: cover;
   background-position: center;
+}
+
+/* Responsive breakpoints */
+
+/* For large screens (e.g., desktops) - Default */
+@media (min-width: 1024px) {
+  .product-box {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  }
+}
+
+/* For medium screens (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .product-box {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+}
+
+/* For small screens (e.g., mobile phones) */
+@media (max-width: 767px) {
+  .product-box {
+    grid-template-columns: 1fr; /* 1 column */
+  }
 }
 
 .product-bgbox img {
@@ -889,12 +916,7 @@ align-items: center; */
     flex-direction: column;
     align-items: center;
   }
-  .product-box {
-    flex-wrap: wrap;
-  }
-  .product-bgbox {
-    flex: 1 1 45%; /* Adjusts to roughly half width on tablets */
-  }
+
   .single-bgbox {
     flex-wrap: wrap;
   }
@@ -933,18 +955,12 @@ align-items: center; */
   .hero-content {
     flex-direction: column;
   }
-  .product-bgbox {
-    flex: 1 1 100%; /* Full width on smaller screens */
-  }
 
   .single-bgbox {
     flex-wrap: wrap;
   }
   .heading2 {
     font-size: 1rem;
-  }
-  .product-box {
-    flex-wrap: wrap;
   }
 
   .heading3 {
@@ -1148,4 +1164,17 @@ align-items: center; */
   .homepage {
     height: calc(100vh - 3.5rem); /* Adjust for header height if applicable */
   }
+}
+
+/* Initial state: hidden */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* When visible: show with animation */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

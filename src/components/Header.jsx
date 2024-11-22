@@ -48,7 +48,9 @@ const ResponsiveNavbar = () => {
   return (
     <header className={`header ${showHeader ? "show" : "hide"}`} id="header">
       <nav className="nav container">
-        <img className="nav__logo" src={logo} alt="Logo" />
+        <Link to="/">
+          <img className="nav__logo" src={logo} alt="Logo" />
+        </Link>
 
         <div
           className={`nav__menu ${menuVisible ? "show-menu" : ""}`}

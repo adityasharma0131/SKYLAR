@@ -54,78 +54,78 @@ const Singpro = () => {
     return <div className="singpro__error">{error}</div>;
   }
 
-  // Render dynamically based on product keys
   const renderProductDetails = () => {
-    return Object.entries(product).map(([key, value]) => {
-      if (key === "id" || key === "name" || key === "image") return null; // Skip certain keys
+    return Object.entries(product)
+      .filter(([key]) => key !== "title") // Skip the title key
+      .map(([key, value]) => {
+        if (key === "id" || key === "name" || key === "image") return null; // Skip certain keys
 
-      // Handle rendering of known complex structures like features and tables
-      if (key === "features" && Array.isArray(value)) {
-        return (
-          <div key={key} className="grid-item">
-            <h2 className="sing-heading2">
-              {capitalizeHeader("Features And Benefits")}
-            </h2>
-            <ul className="feature-list">
-              {value.map((feature, index) => (
-                <li key={index}>{feature}</li>
-              ))}
-            </ul>
-          </div>
-        );
-      }
-
-      if (key === "aac_block_size_chart" && Array.isArray(value)) {
-        return (
-          <div key={key} className="grid-item">
-            <h2 className="sing-heading2">
-              {capitalizeHeader("AAC Block Size Chart")}
-            </h2>
-            <table className="aac-block-size-chart">
-              <thead>
-                <tr>
-                  <th>Size</th>
-                  <th>Dimensions</th>
-                  <th>Pieces per CBM</th>
-                </tr>
-              </thead>
-              <tbody>
-                {value.map((block, index) => (
-                  <tr key={index}>
-                    <td>{block.size}</td>
-                    <td>{block.dimensions}</td>
-                    <td>{block.pieces_per_cbm}</td>
-                  </tr>
+        // Handle rendering of known complex structures like features and tables
+        if (key === "features" && Array.isArray(value)) {
+          return (
+            <div key={key} className="grid-item">
+              <h2 className="sing-heading2">
+                {capitalizeHeader("Features And Benefits")}
+              </h2>
+              <ul className="feature-list">
+                {value.map((feature, index) => (
+                  <li key={index}>{feature}</li>
                 ))}
-              </tbody>
-            </table>
-          </div>
-        );
-      }
+              </ul>
+            </div>
+          );
+        }
 
-      if (typeof value === "object" && !Array.isArray(value)) {
+        if (key === "aac_block_size_chart" && Array.isArray(value)) {
+          return (
+            <div key={key} className="grid-item">
+              <h2 className="sing-heading2">
+                {capitalizeHeader("AAC Block Size Chart")}
+              </h2>
+              <table className="aac-block-size-chart">
+                <thead>
+                  <tr>
+                    <th>Size</th>
+                    <th>Dimensions</th>
+                    <th>Pieces per CBM</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {value.map((block, index) => (
+                    <tr key={index}>
+                      <td>{block.size}</td>
+                      <td>{block.dimensions}</td>
+                      <td>{block.pieces_per_cbm}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+
+        if (typeof value === "object" && !Array.isArray(value)) {
+          return (
+            <div key={key} className="grid-item">
+              <h2 className="sing-heading2">{capitalizeHeader(key)}</h2>
+              <ul className="property-list">
+                {Object.entries(value).map(([subKey, subValue]) => (
+                  <li key={subKey}>
+                    <strong>{capitalizeHeader(subKey)}:</strong> {subValue}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        }
+        // Default rendering for other string or simple keys
         return (
           <div key={key} className="grid-item">
             <h2 className="sing-heading2">{capitalizeHeader(key)}</h2>
-            <ul className="property-list">
-              {Object.entries(value).map(([subKey, subValue]) => (
-                <li key={subKey}>
-                  <strong>{capitalizeHeader(subKey)}:</strong> {subValue}
-                </li>
-              ))}
-            </ul>
+            <p className="singpro__description">{value}</p>
           </div>
         );
-      }
-
-      // Default rendering for other string or simple keys
-      return (
-        <div key={key} className="grid-item">
-          <h2 className="sing-heading2">{capitalizeHeader(key)}</h2>
-          <p className="singpro__description">{value}</p>
-        </div>
-      );
-    });
+      });
   };
 
   // Render the product details
@@ -139,13 +139,18 @@ const Singpro = () => {
             alt={product?.name || "Product Image"}
           />
           <div className="single-content">
-            <h1 className="heading3">{product?.name || "Product Name"}</h1>
+            <h1 className="heading3">
+              {product?.title && product?.name
+                ? `${product.title} ${product.name}`
+                : product?.title || product?.name || "Product Name"}
+            </h1>
             <div className="product-grid">{renderProductDetails()}</div>
           </div>
         </div>
       </div>
       <ScrollToTop />
-      <WhatsAppButton phoneNumber="9969929292" /> {/* Replace with your actual WhatsApp number */}
+      <WhatsAppButton phoneNumber="9969929292" />{" "}
+      {/* Replace with your actual WhatsApp number */}
     </>
   );
 };

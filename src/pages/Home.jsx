@@ -66,10 +66,31 @@ const Home = () => {
       setResult(data.message);
     }
   };
+  // Intersection Observer to detect visibility
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible"); // Add the visible class
+          } else {
+            entry.target.classList.remove("visible"); // Remove the visible class
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
 
+    const sections = document.querySelectorAll(".fade-in");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
   return (
     <>
-      <div className="homepage" id="home">
+      <div className="homepage fade-in" id="home">
         <div className="hero-content">
           <div className="hero-image">
             {/* The background image will be styled via CSS */}
@@ -117,7 +138,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="weare" id="about">
+      <div className="weare fade-in" id="about">
         <div className="bgbox">
           <h2 className="heading1">About Us</h2>
           <hr />
@@ -127,7 +148,7 @@ const Home = () => {
               <h1 className="heading4" style={{ color: "#ec3223" }}>
                 SKYLARK<sup>TM</sup>
               </h1>
-              <h3 className="heading2">ACC BLOCK AND BLOCK JOINTER</h3>
+              <h3 className="heading2">Your Complete Building Solution</h3>
 
               <img className="about-image" src={aboutpic} alt="" />
             </div>
@@ -153,14 +174,15 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="our-products" id="products">
+      <div className="our-products fade-in" id="products">
         <div className="prbox">
           <h2 className="heading1">Our Products</h2>
           <hr />
-          <div className="product-box">
+          <div className="product-box ">
             {products.map((product) => (
               <div className="product-bgbox" key={product.id}>
                 <img src={product.image} alt={product.name} />
+                <h1 className="heading">{product.title}</h1>
                 <h1 className="heading1">{product.name}</h1>
                 <p>{product.description}</p>
                 <button onClick={() => handleShowMore(product.id)}>
@@ -171,7 +193,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="contact-section" id="contact">
+      <div className="contact-section fade-in" id="contact">
         <div className="contact-container">
           <h2 className="heading1">Reach out to us</h2>
           <p className="contact-subheading">
@@ -215,7 +237,7 @@ const Home = () => {
           </form>
         </div>
       </div>
-      <div className="footer-map">
+      <div className="footer-map fade-in">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195.5592465869509!2d72.87121311156604!3d19.260268136642573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0f27194fa11%3A0xd52f0613215a6c03!2sMetasky!5e1!3m2!1sen!2sin!4v1725545129996!5m2!1sen!2sin"
           width="100%"
