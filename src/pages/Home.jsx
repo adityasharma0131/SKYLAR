@@ -157,18 +157,14 @@ const Home = () => {
                 WHERE INNOVATION MEETS SUSTAINABILITY.
               </h2>
               <p className="para">
-                SKYLARK is a renowned supplier of AAC Blocks and Block Jointer
-                products, dedicated to delivering high-quality construction
-                materials for a variety of masonry applications. With a strong
-                commitment to excellence, SKYLARK offers precisely manufactured
-                AAC (Autoclaved Aerated Concrete) Blocks that meet the rigorous
-                standards of IS 2185 PART III, ensuring reliability and superior
-                performance in construction projects. Our AAC Blocks are known
-                for their lightweight yet strong composition, making them an
-                ideal choice for building energy-efficient and durable
-                structures. These blocks provide excellent thermal insulation,
-                soundproofing, and fire resistance, making them suitable for
-                residential, commercial, and industrial constructions.
+                SKYLARK is a trusted name in the construction industry, known
+                for supplying high-quality Tile Adhesive and Block Jointer
+                products. Committed to excellence, the company provides reliable
+                materials designed to meet the diverse needs of masonry
+                applications. With a strong focus on innovation, durability, and
+                customer satisfaction, SKYLARK ensures that its products not
+                only meet industry standards but also enhance the strength and
+                longevity of construction projects.
               </p>
             </div>
           </div>
