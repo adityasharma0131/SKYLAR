@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import ScrollToTop from "../components/ScrollToTop"; // Adjust the path as needed
 import WhatsAppButton from "../components/WhatsaapButton"; // Adjust the path as needed
 import aboutpic from "../assets/aboutpic.png";
-
+import heroImg1 from "../assets/heroimg1.png";
+import heroImg5 from "../assets/heroimg5.png";
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -90,7 +91,7 @@ const Home = () => {
   }, []);
 
   const [currentImage, setCurrentImage] = useState(0);
-  const images = ["/src/assets/heroimg1.png", "/src/assets/heroimg5.png"];
+  const images = [heroImg1, heroImg5];
 
   useEffect(() => {
     const interval = setInterval(() => {
