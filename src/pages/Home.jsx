@@ -88,12 +88,31 @@ const Home = () => {
       sections.forEach((section) => observer.unobserve(section));
     };
   }, []);
+
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = ["/src/assets/heroimg1.png", "/src/assets/heroimg5.png"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 8000); // Change image every 8 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <div className="homepage fade-in" id="home">
         <div className="hero-content">
-          <div className="hero-image">
-            {/* The background image will be styled via CSS */}
+          <div className="hero-slideshow">
+            {images.map((img, index) => (
+              <div
+                key={index}
+                className={`hero-image ${
+                  currentImage === index ? "active" : ""
+                }`}
+                style={{ backgroundImage: `url(${img})` }}
+              ></div>
+            ))}
           </div>
           <div className="hero-data">
             <div className="hero-heading">

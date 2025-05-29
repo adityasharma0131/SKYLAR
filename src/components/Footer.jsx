@@ -69,7 +69,7 @@ const Footer = () => {
             <h3>Contact</h3>
             <ul>
               <li>
-                <FaPhone /> +91 9969929292
+                <FaPhone /> +91 9969929292 | +91 90967 86786
               </li>
               <li>
                 <FaEnvelope /> skylarkgroup92@gmail.com
